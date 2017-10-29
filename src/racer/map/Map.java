@@ -33,7 +33,7 @@ public class Map {
     }
 
     /**
-     * Load racer.map
+     * Load map
      *
      * @param path relative directory path to racer.map image.
      */
@@ -85,7 +85,7 @@ public class Map {
      * @param x: xCoordinate
      * @param y: yCoordinate
      */
-    private Block getBlock(int x, int y) {
+    public Block getBlock(int x, int y) {
         int index = x + y * width;
         if (index >= 0 && index < pixels.length) {
             switch (pixels[index]) {

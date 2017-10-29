@@ -32,9 +32,11 @@ public class Sprite {
     /**
      * Pre-loading each type of sprite
      */
+
     public static Sprite greenSprite = new Sprite(0, 0, SpriteSheet.spriteSheet);
     public static Sprite wallSprite = new Sprite(2, 0, SpriteSheet.spriteSheet);
     public static Sprite trackSprite = new Sprite(0xE6FFA3);
+    public static Sprite carSprite = new Sprite(4, 0, SpriteSheet.spriteSheet);
 
     /**
      * Construct sprite from X & Y position on sheet.

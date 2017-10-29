@@ -1,5 +1,6 @@
 package racer;
 
+import racer.entity.Manager;
 import racer.graphics.Screen;
 
 import javax.swing.*;
@@ -44,6 +45,8 @@ public class Main extends Canvas implements Runnable {
      */
     private Screen screen;
 
+    //TODO
+    private Manager manager;
 
     /**
      * Setup Canvas GUI
@@ -79,6 +82,8 @@ public class Main extends Canvas implements Runnable {
         screen = new Screen(width, height);
         // Setting frame as new JFrame
         frame = new JFrame();
+        // TODO
+        manager = new Manager();
     }
 
     /**
@@ -90,6 +95,7 @@ public class Main extends Canvas implements Runnable {
         requestFocus();
         // Infinite loop to continuously update screen. Main program functionality starts here.
         while (running) {
+            manager.update();
             render();
         }
         // If running is set elsewhere to false, call stop to join threads gracefully.
@@ -111,6 +117,10 @@ public class Main extends Canvas implements Runnable {
         // Set graphics2D as graphic on screen
         screen.setGraphic(graphics2D);
 
+
+        screen.setGraphic(graphics2D);
+        manager.renderByPixels(screen);
+
         // Pre-define BufferedImage with width and height of screen and set RGB as type.
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         // Integer list of pixels
@@ -119,6 +129,10 @@ public class Main extends Canvas implements Runnable {
         System.arraycopy(screen.getPixels(), 0, pixels, 0, pixels.length);
         graphics2D.setStroke(new BasicStroke(2));
         graphics2D.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+
+        manager.renderByGraphics(screen);
+        screen.dispose();
+
         screen.dispose();
         bufferStrategy.show();
     }

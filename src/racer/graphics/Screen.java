@@ -2,6 +2,8 @@ package racer.graphics;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
 
 import racer.block.Block;
 
@@ -74,6 +76,34 @@ public class Screen {
                 pixels[xScreen + yScreen * width] = _block.sprite.getPixels()[xTile + yTile * _block.size];
             }
         }
+    }
+
+    /**
+     * Render car on screen.
+     *
+     * @param xPosition x coordinate of Sprite on screen.
+     * @param yPosition y coordinate of Sprite on screen.
+     * @param angle     Car angle.
+     * @param sprite    Sprite to be rendered.
+     */
+    public void renderCar(int xPosition, int yPosition, double angle, Sprite sprite) {
+        xPosition -= xOffset;
+        yPosition -= yOffset;
+        BufferedImage img = new BufferedImage(Sprite.SIZE, Sprite.SIZE,
+                BufferedImage.TYPE_INT_ARGB);
+        for (int ySprite = 0; ySprite < Sprite.SIZE; ySprite++) {
+            for (int xSprite = 0; xSprite < Sprite.SIZE; xSprite++) {
+                int color = sprite.getPixels()[(xSprite + ySprite * Sprite.SIZE)];
+                if (color != 0xffffffff) {
+                    img.setRGB(xSprite, ySprite, color);
+                }
+            }
+        }
+        AffineTransform reset = new AffineTransform();
+        reset.rotate(0, 0, 0);
+        graphics2D.rotate(angle, (xPosition + Sprite.SIZE / 2), (yPosition + Sprite.SIZE / 2));
+        graphics2D.drawImage(img, xPosition, yPosition, Sprite.SIZE, Sprite.SIZE, null);
+        graphics2D.setTransform(reset);
     }
 
     /**

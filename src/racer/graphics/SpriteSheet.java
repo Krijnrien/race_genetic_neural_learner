@@ -48,12 +48,12 @@ public class SpriteSheet {
      */
     private void load() {
         try {
-            BufferedImage image = ImageIO.read(SpriteSheet.class
-                    .getResource(path));
+            BufferedImage image = ImageIO.read(SpriteSheet.class.getResource(path));
             int w = image.getWidth();
             int h = image.getHeight();
             image.getRGB(0, 0, w, h, pixels, 0, w);
         } catch (IOException e) {
+            //TODO Handle error
             e.printStackTrace();
         }
     }
