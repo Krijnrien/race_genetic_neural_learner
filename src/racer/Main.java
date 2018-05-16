@@ -95,7 +95,7 @@ public class Main extends Canvas implements Runnable {
         requestFocus();
         // Infinite loop to continuously update screen. Main program functionality starts here.
         while (running) {
-            manager.update();
+            manager.update(frame);
             render();
         }
         // If running is set elsewhere to false, call stop to join threads gracefully.
@@ -116,7 +116,6 @@ public class Main extends Canvas implements Runnable {
         Graphics2D graphics2D = (Graphics2D) bufferStrategy.getDrawGraphics();
         // Set graphics2D as graphic on screen
         screen.setGraphic(graphics2D);
-
 
         screen.setGraphic(graphics2D);
         manager.renderByPixels(screen);

@@ -9,9 +9,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 /**
- * Map for racer. Loading (image and blocks), updating and rendering of racer.map for racer.
+ * RaceMap for racer. Loading (image and blocks), updating and rendering of racer.raceMap for racer.
  */
-public class Map {
+public class RaceMap {
     /**
      * Width and height of screen
      */
@@ -23,24 +23,24 @@ public class Map {
     private int[] pixels;
 
     /**
-     * Pass string to racer.map loading method
+     * Pass string to racer.raceMap loading method
      *
-     * @param path relative directory path to racer.map image.
+     * @param path relative directory path to racer.raceMap image.
      */
-    public Map(String path) {
+    public RaceMap(String path) {
         // Passing to method for coding functionality naming clarity
         loadMap(path);
     }
 
     /**
-     * Load map
+     * Load raceMap
      *
-     * @param path relative directory path to racer.map image.
+     * @param path relative directory path to racer.raceMap image.
      */
     private void loadMap(String path) {
         try {
             // Load image from given path
-            BufferedImage image = ImageIO.read(Map.class.getResource(path));
+            BufferedImage image = ImageIO.read(RaceMap.class.getResource(path));
             // Get image width, also used later for rendering.
             width = image.getWidth();
             // Get image height, also used later for rendering.
@@ -56,7 +56,7 @@ public class Map {
     }
 
     /**
-     * Rendering racer.map from image to screen. Converts block position to screen pixels and reverse.
+     * Rendering racer.raceMap from image to screen. Converts block position to screen pixels and reverse.
      * Spooky magic method that applies magic to numbers I copied.
      *
      * @param xScroll: the xOffset of screen
@@ -73,7 +73,7 @@ public class Map {
             for (int x = xMostLeft; x < xMostRight; x++) {
                 if (x < 0 || y < 0 || x >= width || y >= height) {
                     Block.trackBlock.render(x << Sprite.SIZE_2BASED, y << Sprite.SIZE_2BASED, screen);
-                    // Draw racer.map only once, so continue.
+                    // Draw racer.raceMap only once, so continue.
                     continue;
                 }
                 getBlock(x, y).render(x << Sprite.SIZE_2BASED, y << Sprite.SIZE_2BASED, screen);

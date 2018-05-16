@@ -1,7 +1,5 @@
 package racer.entity;
 
-import racer.entity.Entity;
-
 /**
  * Mobility functionality for car as extend class.
  */
@@ -50,7 +48,7 @@ public abstract class Mobile extends Entity {
         for (int corner = 0; corner < 4; corner++) {
             int xt = ((x + xPosition) + (corner % 2) * 7 + 5) >> 4;
             int yt = ((y + yPosition) + (corner / 2) * 12 + 3) >> 4;
-            if (map.getBlock(xt, yt).solid()) {
+            if (raceMap.getBlock(xt, yt).solid()) {
                 collided = true;
             }
         }

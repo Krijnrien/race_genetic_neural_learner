@@ -23,7 +23,6 @@ public class SpriteSheet {
      */
     int[] pixels;
 
-
     /**
      * Load sprite sheet from file path.
      */

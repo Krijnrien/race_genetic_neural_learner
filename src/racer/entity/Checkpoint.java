@@ -8,7 +8,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 /**
- * Checkpoints on map to track progress.
+ * Checkpoints on raceMap to track progress.
  */
 public class Checkpoint {
     /**
@@ -27,7 +27,7 @@ public class Checkpoint {
     private boolean isActive;
 
     /**
-     * Constructor setting checkpoint on map position and set to active.
+     * Constructor setting checkpoint on raceMap position and set to active.
      *
      * @param a        First Point2D position.
      * @param b        Second Point2D position.
