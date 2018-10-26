@@ -2,7 +2,7 @@ package racer.algorithm;
 
 import java.util.ArrayList;
 
-/*
+/**
  * @Description: NeuralNetwork is used to make decision for the car; decide that it
  * should turn right or turn left or go straight. It may contain many hidden NeuronsLayers 
  * and 1 output NeuronsLayer. These layers will constantly update to get new values from genomes
@@ -23,7 +23,7 @@ public class NeuralNetwork {
 		inputs = new ArrayList<>();
 	}
 
-	/*
+	/**
 	 * receive input from sensors of car which is normalized distance from
 	 * center of car to the wall.
 	 */
@@ -34,7 +34,6 @@ public class NeuralNetwork {
         }
 	}
 
-	@SuppressWarnings("unchecked")
 	public void update() {
 		outputs.clear();
 		for (int i = 0; i < hiddenLayers.size(); i++) {
@@ -48,6 +47,8 @@ public class NeuralNetwork {
 		}
 		// the outputs of HiddenLayers will be used as input for
 		// OutputLayer
+		//todo unchecked below
+		//noinspection unchecked
 		inputs = (ArrayList<Double>) outputs.clone();
 		// The output layer will give out the final outputs
 		outputLayer.evaluate(inputs, outputs);
@@ -90,7 +91,7 @@ public class NeuralNetwork {
 		hidden.loadLayer(neurons);
 		hiddenLayers.add(hidden);
 
-		// Clear weights and reasign the weights to the output.
+		// Clear weights and reassign the weights to the output.
 		ArrayList<Neuron> neuronsOut = new ArrayList<>();
 		for (int i = 0; i < numOfOutputs; i++) {
 			ArrayList<Double> weights = new ArrayList<>();

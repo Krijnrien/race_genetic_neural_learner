@@ -10,17 +10,17 @@ public class Genome {
     /**
      * Id to identify genome
      */
-    public int ID;
+    int ID;
 
 
     /**
      * Fitness to determine progress of genome.
      */
-    public double fitness;
+    double fitness;
 
 
     /**
      * Sigmoid weight of genome
      */
-    public ArrayList<Double> weights;
+    ArrayList<Double> weights;
 }

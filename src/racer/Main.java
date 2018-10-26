@@ -18,7 +18,7 @@ public class Main extends Canvas implements Runnable {
     /**
      * Width of screen
      */
-    private static int width = 1200;
+    private static int width = 600;
 
     /**
      * Height of screen of 9/16 aspect ratio depending on width size.
@@ -95,7 +95,7 @@ public class Main extends Canvas implements Runnable {
         requestFocus();
         // Infinite loop to continuously update screen. Main program functionality starts here.
         while (running) {
-            manager.update(frame);
+            manager.update();
             render();
         }
         // If running is set elsewhere to false, call stop to join threads gracefully.

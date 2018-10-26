@@ -2,17 +2,17 @@ package racer.algorithm;
 
 import java.util.ArrayList;
 
-/*
+/**
  * @Description: NeuronsLayer contains Neurons. It evaluates these nerons to give
  * out decision.
  */
 class NeuronsLayer {
     private static final float BIAS = -1.0f;
     private int totalNeurons;
-    // int totalInputs;
+    // int totalInputs;y
     private ArrayList<Neuron> neurons;
 
-    /*
+    /**
      * Evaluate the inputs from sensors or HiddenLayer and give out the output
      */
     void evaluate(ArrayList<Double> inputs, ArrayList<Double> outputs) {
@@ -24,9 +24,7 @@ class NeuronsLayer {
             // sum the weights up to numberOfInputs-1 and add the bias
             for (int j = 0; j < numOfInputs - 1; j++) {
                 if (inputIndex < inputs.size()) {
-                    activation += inputs.get(inputIndex)
-                            * neuron.weights.get(j);
-                    inputIndex++;
+                    activation += inputs.get(inputIndex++) * neuron.weights.get(j);
                 }
             }
             // Add the bias.

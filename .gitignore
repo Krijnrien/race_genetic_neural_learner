@@ -10,7 +10,7 @@ README.md
 /dist
 /tmp
 /app/**/*.js
-/app/**/*.js.racer.map
+/app/**/*.js.racer.graphics.map
 
 # dependencies
 /node_modules
@@ -30,7 +30,7 @@ testem.log
 
 # e2e
 /e2e/*.js
-/e2e/*.racer.map
+/e2e/*.racer.graphics.map
 
 #System Files
 .DS_Store

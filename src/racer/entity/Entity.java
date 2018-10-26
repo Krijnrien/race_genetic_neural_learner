@@ -1,6 +1,6 @@
 package racer.entity;
 
-import racer.map.RaceMap;
+import racer.graphics.map.RaceMap;
 import racer.graphics.Screen;
 
 /**
@@ -15,7 +15,7 @@ public abstract class Entity {
     /**
      * RaceMap to render entity on.
      */
-    protected RaceMap raceMap;
+    RaceMap raceMap;
 
     /**
      * Updating entity

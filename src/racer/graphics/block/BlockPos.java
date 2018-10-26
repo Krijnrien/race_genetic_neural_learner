@@ -1,4 +1,4 @@
-package racer.block;
+package racer.graphics.block;
 
 import racer.graphics.Sprite;
 
