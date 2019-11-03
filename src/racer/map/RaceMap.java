@@ -1,8 +1,8 @@
-package racer.graphics.map;
+package racer.map;
 
 import racer.graphics.Screen;
 import racer.graphics.Sprite;
-import racer.graphics.block.Block;
+import racer.block.Block;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

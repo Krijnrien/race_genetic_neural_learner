@@ -1,8 +1,8 @@
 package racer.entity;
 
 import racer.algorithm.NeuralNetwork;
-import racer.graphics.block.Block;
-import racer.graphics.map.RaceMap;
+import racer.block.Block;
+import racer.map.RaceMap;
 import racer.graphics.Screen;
 import racer.graphics.Sprite;
 
@@ -34,7 +34,6 @@ public class Car extends Mobile {
         left, left_front, front, front_right, right,
     }
 
-    //todo
     private int Id;
     private static float SENSOR_LENGTH = 32.0f;
     private double deltaDistance;
@@ -231,7 +230,7 @@ public class Car extends Mobile {
      * @return Rectangle shape the size of the car.
      */
     Rectangle2D getCarBound() {
-        return new Rectangle2D.Double(x - Sprite.SIZE / 2.0, y - Sprite.SIZE / 2.0, Sprite.SIZE, Sprite.SIZE);
+        return new Rectangle2D.Double(x - Sprite.SIZE / 2, y - Sprite.SIZE / 2, Sprite.SIZE, Sprite.SIZE);
     }
 
     /**
